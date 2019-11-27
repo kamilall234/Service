@@ -1,20 +1,19 @@
 package com.kamil.serwis;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Component;
 
 
 @SpringBootApplication
-public class SerwisApplication {
+public class Application {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(SerwisApplication.class,args);
-		
+		SpringApplication.run(Application.class,args);
 
 	}
+
+
 
 }
