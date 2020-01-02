@@ -28,6 +28,9 @@ public class RepoTest {
         testDB.setName("testowany");
         try {
             entityManager.persist(testDB);
+            System.out.println("ID testowe :" +testDB.getTestId());
+            entityManager.flush();
+            testDB.setName("przetestowany");
 
         }catch (Exception e){
             e.printStackTrace();
