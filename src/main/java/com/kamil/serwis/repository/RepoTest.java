@@ -1,15 +1,10 @@
-package com.kamil.serwis.config;
-
-
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.ComponentScans;
+package com.kamil.serwis.repository;
+import com.kamil.serwis.dao.TestDB;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnit;
+
 
 @Repository
 public class RepoTest {
@@ -35,6 +30,5 @@ public class RepoTest {
         }catch (Exception e){
             e.printStackTrace();
         }
-
     }
 }

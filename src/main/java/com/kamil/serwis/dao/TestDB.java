@@ -1,4 +1,4 @@
-package com.kamil.serwis.config;
+package com.kamil.serwis.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
