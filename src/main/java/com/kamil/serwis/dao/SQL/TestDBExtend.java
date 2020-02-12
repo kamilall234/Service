@@ -1,9 +1,6 @@
 package com.kamil.serwis.dao.SQL;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class TestDBExtend extends TestDB{
@@ -34,5 +31,11 @@ public class TestDBExtend extends TestDB{
     public void setNameChildren(String nameChildren) {
         this.nameChildren = nameChildren;
         super.setName(new StringBuffer().toString().toUpperCase().concat("fromChildren"));
+    }
+    @ManyToOne
+    private TestDBOneToMany testDBoneToMany;
+
+    public void setTestDBoneToMany(TestDBOneToMany testDBoneToMany) {
+        this.testDBoneToMany = testDBoneToMany;
     }
 }

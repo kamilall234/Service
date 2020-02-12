@@ -2,6 +2,7 @@ package com.kamil.serwis.repository;
 
 import com.kamil.serwis.dao.NoSQL.MongoTestDao;
 import com.kamil.serwis.dao.NoSQL.MongoTestExtendDao;
+import com.mongodb.Mongo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
@@ -12,6 +13,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceUnit;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 
 @Repository
@@ -39,6 +41,8 @@ public class MongoTest {
         }
 
         /*Optional<MongoTestExtendDao>*/ MongoTestExtendDao mongoTestExtendDaoOptional = entityManagerMongo.find(MongoTestExtendDao.class, new String("50b50bc7-483f-4b7c-ac01-5852f1b64cb5"));
+
+        Class<MongoTest> aclass = MongoTest.class;
 
         System.out.println("Pobranie z bazy danych "+mongoTestExtendDaoOptional.getExampleName());
         MongoTestDao mongoTestDaoFromExtendDao = (MongoTestDao) mongoTestExtendDaoOptional;

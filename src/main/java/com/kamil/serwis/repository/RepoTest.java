@@ -1,6 +1,7 @@
 package com.kamil.serwis.repository;
 import com.kamil.serwis.dao.SQL.TestDB;
 import com.kamil.serwis.dao.SQL.TestDBExtend;
+import com.kamil.serwis.dao.SQL.TestDBOneToMany;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,9 +16,6 @@ public class RepoTest {
 
 
     @PersistenceContext(name = "MySQLPersistence")
-/*
-    @PersistenceUnit(unitName = "MySQLPersistence")
-*/
     @Autowired
     private EntityManager entityManager;
 
@@ -36,6 +34,20 @@ public class RepoTest {
             System.out.println("Entity Manager z MySQLRepository "+entityManager.toString());
             testDB.setName("przetestowany");
 
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        TestDBOneToMany testDBOneToMany = new TestDBOneToMany();
+        testDBOneToMany.setOneToManyName("Test persist dla OneToMany");
+        TestDBExtend testDBExtend1 = new TestDBExtend();
+        testDBExtend1.setNameChildren("Many to One test persist");
+        testDBExtend1.setTestDBoneToMany(testDBOneToMany);
+
+        try {
+            entityManager.persist(testDBOneToMany);
+            entityManager.persist(testDBExtend1);
+            entityManager.flush();
         }catch (Exception e){
             e.printStackTrace();
         }
