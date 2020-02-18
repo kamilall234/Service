@@ -1,4 +1,4 @@
-package com.kamil.serwis.dao.SQL;
+package com.kamil.serwis.model.SQL.test;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

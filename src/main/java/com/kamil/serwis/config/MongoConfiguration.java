@@ -53,9 +53,9 @@ public class MongoConfiguration {
         properties.setProperty("hibernate.ogm.datastore.port","27017");
         properties.setProperty("hibernate.ogm.datastore.database", "test");
         properties.setProperty("hibernate.ogm.datastore.create_database", "true");
-        properties.setProperty("hibernate.ogm.datastore.username","test");
-        properties.setProperty("hibernate.ogm.datastore.password","test");
-        properties.setProperty("hibernate.ogm.mongodb.authentication_database","test");
+        properties.setProperty("hibernate.ogm.datastore.username","testUser");
+        properties.setProperty("hibernate.ogm.datastore.password","password");
+        properties.setProperty("hibernate.ogm.mongodb.authentication_database","admin");
         properties.setProperty("hibernate.transaction.jta.platform","JBossTS");
         properties.setProperty("OgmProperties.ENABLED","false");
         properties.setProperty("hibernate.show_sql","true");

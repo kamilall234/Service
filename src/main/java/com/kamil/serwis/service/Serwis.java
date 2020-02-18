@@ -1,6 +1,5 @@
 package com.kamil.serwis.service;
-import com.kamil.serwis.repository.MongoTest;
-import com.kamil.serwis.repository.RepoTest;
+import com.kamil.serwis.repository.dao.SQL.RepoTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
@@ -12,8 +11,8 @@ public class Serwis {
     @Autowired
     RepoTest repoTest;
 
-    @Autowired
-    MongoTest mongoTest;
+    /*@Autowired
+    MongoTest mongoTest;*/
 
 
     public Serwis() {
@@ -26,9 +25,9 @@ public class Serwis {
     }
 
 
-    @PostConstruct
+   /* @PostConstruct
     public void addEntityTestToMongoDB(){
         mongoTest.addTestEntityToMongoDB();
     }
-
+*/
 }

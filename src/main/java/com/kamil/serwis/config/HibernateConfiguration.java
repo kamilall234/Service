@@ -25,10 +25,10 @@ import java.util.Properties;
 @EnableTransactionManagement
 public class HibernateConfiguration {
 
-    private final String URLDatabase = "jdbc:mysql://localhost:3306/SerwisDB";
+    private final String URLDatabase = "jdbc:mariadb://localhost:3306/SerwisDB";
     private final String User = "test";
-    private final String Password = "test";
-    private final String SQLDatabase = "com.mysql.jdbc.Driver";
+    private final String Password = "password";
+    private final String SQLDatabase = "org.mariadb.jdbc.Driver";
 
 
     @Bean(name ="entityManagerFactoryMySQL")

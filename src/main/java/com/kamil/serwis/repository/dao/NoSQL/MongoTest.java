@@ -1,19 +1,12 @@
-package com.kamil.serwis.repository;
+package com.kamil.serwis.repository.dao.NoSQL;
 
 import com.kamil.serwis.dao.NoSQL.MongoTestDao;
 import com.kamil.serwis.dao.NoSQL.MongoTestExtendDao;
-import com.mongodb.Mongo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnit;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Stream;
 
 
 @Repository

@@ -1,4 +1,4 @@
-package com.kamil.serwis.dao.SQL;
+package com.kamil.serwis.model.SQL.test;
 
 import javax.persistence.*;
 

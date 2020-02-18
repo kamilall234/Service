@@ -1,19 +1,17 @@
-package com.kamil.serwis.repository;
-import com.kamil.serwis.dao.SQL.TestDB;
-import com.kamil.serwis.dao.SQL.TestDBExtend;
-import com.kamil.serwis.dao.SQL.TestDBOneToMany;
+package com.kamil.serwis.repository.dao.SQL;
+import com.kamil.serwis.model.SQL.test.TestDB;
+import com.kamil.serwis.model.SQL.test.TestDBExtend;
+import com.kamil.serwis.model.SQL.test.TestDBOneToMany;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnit;
 
 
 @Repository
 public class RepoTest {
-
 
     @PersistenceContext(name = "MySQLPersistence")
     @Autowired
