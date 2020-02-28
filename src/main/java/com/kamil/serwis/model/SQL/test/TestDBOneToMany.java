@@ -8,7 +8,6 @@ import java.util.List;
 @Entity
 public class TestDBOneToMany {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer testId;

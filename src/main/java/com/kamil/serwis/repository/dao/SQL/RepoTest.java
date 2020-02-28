@@ -17,39 +17,39 @@ public class RepoTest {
     @Autowired
     private EntityManager entityManager;
 
-    @Transactional
-    public void addTestEntity(){
-        System.out.println(entityManager.isOpen()+" "+entityManager.toString()+" Transaction "+entityManager.isJoinedToTransaction()+" EMF: "+entityManager.getEntityManagerFactory().toString());
-        TestDB testDB = new TestDB();
-        testDB.setName("testowany");
-        TestDBExtend testDBExtend = new TestDBExtend();
-        testDBExtend.setNameChildren("Test tabeli w pochodnej klasie ");
-        try {
-            entityManager.persist(testDB);
-            System.out.println("ID testowe :" +testDB.getTestId());
-            entityManager.persist(testDBExtend);
-            entityManager.flush();
-            System.out.println("Entity Manager z MySQLRepository "+entityManager.toString());
-            testDB.setName("przetestowany");
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        TestDBOneToMany testDBOneToMany = new TestDBOneToMany();
-        testDBOneToMany.setOneToManyName("Test persist dla OneToMany");
-        TestDBExtend testDBExtend1 = new TestDBExtend();
-        testDBExtend1.setNameChildren("Many to One test persist");
-        testDBExtend1.setTestDBoneToMany(testDBOneToMany);
-
-        try {
-            entityManager.persist(testDBOneToMany);
-            entityManager.persist(testDBExtend1);
-            entityManager.flush();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
+//    @Transactional
+//    public void addTestEntity(){
+//        System.out.println(entityManager.isOpen()+" "+entityManager.toString()+" Transaction "+entityManager.isJoinedToTransaction()+" EMF: "+entityManager.getEntityManagerFactory().toString());
+//        TestDB testDB = new TestDB();
+//        testDB.setName("testowany");
+//        TestDBExtend testDBExtend = new TestDBExtend();
+//        testDBExtend.setNameChildren("Test tabeli w pochodnej klasie ");
+//        try {
+//            entityManager.persist(testDB);
+//            System.out.println("ID testowe :" +testDB.getTestId());
+//            entityManager.persist(testDBExtend);
+//            entityManager.flush();
+//            System.out.println("Entity Manager z MySQLRepository "+entityManager.toString());
+//            testDB.setName("przetestowany");
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//
+//        TestDBOneToMany testDBOneToMany = new TestDBOneToMany();
+//        testDBOneToMany.setOneToManyName("Test persist dla OneToMany");
+//        TestDBExtend testDBExtend1 = new TestDBExtend();
+//        testDBExtend1.setNameChildren("Many to One test persist");
+//        testDBExtend1.setTestDBoneToMany(testDBOneToMany);
+//
+//        try {
+//            entityManager.persist(testDBOneToMany);
+//            entityManager.persist(testDBExtend1);
+//            entityManager.flush();
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//    }
 
 
 

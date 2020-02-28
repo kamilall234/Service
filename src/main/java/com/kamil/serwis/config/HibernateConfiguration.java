@@ -3,6 +3,7 @@ package com.kamil.serwis.config;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -20,9 +21,10 @@ import java.util.Properties;
 
 @Configuration
 @EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactoryMySQL",
-        basePackages = "com.kamil.serwis.repository.RepoTest",
+        basePackages = "com.kamil.serwis.repository",
         transactionManagerRef = "MySQLTransactionManager")
 @EnableTransactionManagement
+@ComponentScan(basePackages = {"com.kamil.serwis.repository.dao.SQL"})
 public class HibernateConfiguration {
 
     private final String URLDatabase = "jdbc:mariadb://localhost:3306/SerwisDB";
@@ -36,7 +38,7 @@ public class HibernateConfiguration {
     LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean emf =
                 new LocalContainerEntityManagerFactoryBean();
-        emf.setPackagesToScan("com.kamil.serwis.dao.SQL");
+        emf.setPackagesToScan("com.kamil.serwis.model.SQL");
         emf.setDataSource(createDataSource());
         emf.setJpaVendorAdapter(createJpaVendorAdapter());
         emf.setJpaProperties(createHibernateProperties());
@@ -66,7 +68,7 @@ public class HibernateConfiguration {
         properties.setProperty(
                 "hibernate.dialect", "org.hibernate.dialect.MySQL55Dialect");
         properties.setProperty("hibernate.show_sql","true");
-       /*properties.setProperty("com.mysql.cj.jdbc.Driver","");*/
+        /*properties.setProperty("com.mysql.cj.jdbc.Driver","");*/
         return properties;
     }
 
@@ -77,3 +79,5 @@ public class HibernateConfiguration {
     }
 
 }
+
+

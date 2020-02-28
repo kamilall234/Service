@@ -19,10 +19,10 @@ public class Serwis {
 
     }
 
-    @PostConstruct
+/*    @PostConstruct
     public void addEntityToDB(){
         repoTest.addTestEntity();
-    }
+    }*/
 
 
    /* @PostConstruct
